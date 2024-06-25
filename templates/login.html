@@ -1,0 +1,35 @@
+{%extends "base.html"%}
+<html lang="en">
+<head>{%block head%}
+    {{super()}}
+    <meta charset="UTF-8">
+    <title>Login</title>
+    {%endblock%}
+</head>
+<body>
+{%block nav%}
+{{super()}}
+
+
+
+
+{%endblock%}
+
+{%block body%}
+
+<form action="#" method="post">
+    <img src="{{ url_for('static', filename='images/Meen_Logo.png') }}" width="250px">
+    <br>
+    <input name="username" type="text" placeholder="Your username">
+    <br>
+    <input name="password" type="password" placeholder="Your password">
+    <br>
+    <input type="submit" value="Log-in">
+    <br>
+
+    <a href="/register">Doesn't have account created than register</a>
+</form>
+
+{%endblock%}
+</body>
+</html>

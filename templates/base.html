@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    {%block head%}
+    <link rel="icon" href="{{ url_for('static', filename='images/Meen_Logo.png') }}">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+{%endblock%}
+
+</head>
+<body>
+{%block nav%}
+<nav>
+
+    <ul>
+        <li>
+            {%if logged_in == "True"%}
+                <img class="profile_img" src="{{ url_for('static', filename= profile +  '.png') }}" width="50px">
+            {%endif%}
+          <a href="/">Home</a>
+            <a href="/search">Search</a>
+
+            {%if logged_in == "False"%}
+                <a href="/login">Login</a>
+
+
+                <a href="/register">Register</a>
+
+            {%else%}
+                <a href="/profile{{profile}}">My profile {{profile}}</a>
+            <a href="/logout">Logout from {{profile}}</a>
+            {%endif%}
+        </li>
+
+
+
+    </ul>
+
+
+
+</nav>
+
+
+
+{%endblock%}
+
+{%block body%}
+
+{%endblock%}
+
+
+</body>
+</html>

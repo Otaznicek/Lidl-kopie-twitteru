@@ -1,0 +1,63 @@
+{%extends "base.html"%}
+
+<html lang="en">
+<head>
+    {%block head%}
+    {{super()}}
+
+    <meta charset="UTF-8">
+    <title>{{profile_name}}</title>
+    {%endblock%}
+
+</head>
+<body>
+{%block nav%}
+{{super()}}
+
+
+
+
+{%endblock%}
+{%block body%}
+<img class="profile_img" src= {{url_for('static', filename=profile_img)}} height="150px"  loading="lazy">
+
+
+<h1>{{display_name}}</h1>
+<h2>{{username}}</h2>
+<h3>Followers {{followers}}</h3>
+<h3>Following {{following}}</h3>
+<p>{{bio}}</p>
+{%if isfollowing == True and logged_in_as != username%}
+<a href="unfollow{{username}}">Unfollow</a>
+
+{%elif logged_in_as != username%}
+
+<a href="follow{{username}}">Follow</a>
+
+{%endif%}
+<div class="posts">
+
+
+<ul class="list-group list-group-flush">
+    <h1 class="postdiv">{{display_name}} posts</h1>
+    {%for post in posts%}
+    <div class="postdiv">
+
+        {%if ".png" in post[0] or ".jpg" in  post[0]%}
+        <img src= {{url_for('static', filename=post[0])}} height="500px" sizes="20px" loading="lazy">
+
+        {%else%}
+
+
+        <li class="list-group-item">{{post[0]}}</li>
+   {%endif%}
+    </div>
+
+    {%endfor%}
+    </ul>
+
+</div>
+
+{%endblock%}
+</body>
+</html>

@@ -1,0 +1,49 @@
+{%extends "base.html"%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register!</title>
+</head>
+<body>
+
+{%block nav%}
+{{super()}}
+
+
+
+
+{%endblock%}
+
+
+
+
+{%block body%}
+
+<form action="#" method="post" enctype="multipart/form-data">
+    <img src="{{ url_for('static', filename='images/Meen_Logo.png') }}" width="250px">
+<br>
+    <input name="username" type="text" placeholder="My username is">
+    <input name="password" type="password" placeholder="My supersecret password">
+
+    <h1>Your account information</h1>
+    <h2>Bio</h2>
+    <input name="bio" required placeholder="I'm god of cats">
+    <h2>Your display name</h2>
+
+    <input name="display_name" required placeholder="My name is:">
+
+
+    <h2>Your profile image</h2>
+
+    <input type="file" name="profile_img">
+
+    <input type="submit" value="Register!">
+
+
+</form>
+
+
+
+{%endblock%}
+</body>
+</html>

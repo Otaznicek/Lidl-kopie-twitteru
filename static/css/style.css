@@ -1,0 +1,62 @@
+body{
+background-color: #463A37 ;
+}
+
+form{
+position: fixed;
+
+}
+
+textarea{
+resize: none;
+
+}
+
+li{
+list-style-type: none;
+text-align: center;
+
+}
+
+.posts{
+margin: auto;
+background-color: white;
+width: 800px;
+border: solid 1px;
+border-radius: 10px;
+
+
+}
+
+.subject{
+text-align: center;
+font-size: 25px;
+
+
+}
+
+
+.postdiv{
+
+border: 1px solid;
+margin: auto;
+
+
+
+
+}
+
+
+.profile_img{
+border: 1px solid;
+border-radius: 70%;
+
+
+}
+
+
+a{
+color: black;
+
+
+}

@@ -1,0 +1,33 @@
+{%extends "base.html"%}
+<html lang="en">
+<head>
+    {%block head%}
+    {{super()}}
+    <meta charset="UTF-8">
+    <title>meen search</title>
+    {%endblock%}
+</head>
+<body>
+
+
+{%block nav%}
+{{super()}}
+
+
+
+
+{%endblock%}
+{%block body%}
+
+<form method="post">
+    <input type="text" name="searchuser" placeholder="Search user">
+    <input type="submit" value="Search">
+
+</form>
+
+
+
+{%endblock%}
+
+</body>
+</html>

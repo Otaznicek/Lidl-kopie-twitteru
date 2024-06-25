@@ -1,0 +1,40 @@
+{%extends "base.html"%}
+<html lang="en">
+<head>
+    {%block head%}
+    {{super()}}
+    <meta charset="UTF-8">
+    <title>Search {{user}}</title>
+    {%endblock%}
+</head>
+<body>
+
+
+{%block nav%}
+{{super()}}
+
+
+
+
+{%endblock%}
+{%block body%}
+
+<form method="post">
+    <input type="text" name="searchuser" placeholder="Search user">
+    <input type="submit" value="Search">
+
+</form>
+
+
+<h1 align="center">Search results</h1>
+{%for user in users%}
+{%if searchtag in user[0]%}
+<li><a href="/profile{{user[0]}}">{{user[0]}}</a></li>
+{%endif%}
+{%endfor%}
+
+
+{%endblock%}
+
+</body>
+</html>
